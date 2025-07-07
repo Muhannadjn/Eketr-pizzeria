@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ekträ Pizzeria - Autentica pizza italiana! Fresh ingredients, traditional recipes, and food made with amore.">
+  <meta name="keywords" content="pizza, pizzeria, italian, kebab, hamburger, salad, Ekträ, Stockholm, authentic">
+  <title>Ekträ Pizzeria - Autentica Pizza Italiana!</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <div class="logo-image">
+          <img src="attached_assets/logo ekträ_1751640978741.png" alt="Ekträ Logo" class="header-logo-image">
+        </div>
+        <div class="logo-text">
+          <h1>Eketrä Pizzeria</h1>
+        </div>
+      </div>
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="#home" data-sv="Hem" data-en="Home">Hem</a></li>
+          <li><a href="#menu" data-sv="Meny" data-en="Menu">Meny</a></li>
+          <li><a href="#about" data-sv="Om oss" data-en="About">Om oss</a></li>
+          <li><a href="#location" data-sv="Plats" data-en="Location">Plats</a></li>
+          <li><a href="#contact" data-sv="Kontakt" data-en="Contact">Kontakt</a></li>
+        </ul>
+        <button class="language-toggle" onclick="toggleLanguage()">
+          <span class="flag-icon">🇬🇧</span>
+          <span class="lang-text">EN</span>
+        </button>
+      </nav>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav-container">
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <button class="language-toggle mobile-lang-toggle" onclick="toggleLanguage()">
+          <span class="flag-icon">🇬🇧</span>
+          <span class="lang-text">EN</span>
+        </button>
+      </div>
+
+      <nav class="mobile-nav" id="mobileNav">
+        <ul>
+          <li><a href="#home" data-sv="Hem" data-en="Home" onclick="closeMobileMenu()">Hem</a></li>
+          <li><a href="#menu" data-sv="Meny" data-en="Menu" onclick="closeMobileMenu()">Meny</a></li>
+          <li><a href="#about" data-sv="Om oss" data-en="About" onclick="closeMobileMenu()">Om oss</a></li>
+          <li><a href="#location" data-sv="Plats" data-en="Location" onclick="closeMobileMenu()">Plats</a></li>
+          <li><a href="#contact" data-sv="Kontakt" data-en="Contact" onclick="closeMobileMenu()">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-logo">
+          <div class="hero-logo-container">
+            <img src="attached_assets/logo ekträ_1751640978741.png" alt="Ekträ Logo" class="hero-logo-image">
+          </div>
+          <h1>Eketrä Pizzeria</h1>
+        </div>
+        <h2 data-sv="Autentica Pizza Italiana!" data-en="Authentic Italian Pizza!">Autentica Pizza Italiana!</h2>
+        <p data-sv="Från traditionella recept till moderna favoriter - varje pizza tillagad med kärlek och italiensk passion" data-en="From traditional recipes to modern favorites - every pizza crafted with love and Italian passion">Från traditionella recept till moderna favoriter - varje pizza tillagad med kärlek och italiensk passion</p>
+        <div class="hero-buttons">
+          <button class="cta-button primary" onclick="scrollToSection('#menu')" data-sv="Visa Meny" data-en="View Menu">Visa Meny</button>
+          <button class="cta-button secondary" onclick="callNow()" data-sv="Ring Nu" data-en="Call Now">Ring Nu</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <h2 data-sv="Vår Meny" data-en="Our Menu">Vår Meny</h2>
+
+        <!-- Menu Navigation -->
+        <div class="menu-nav">
+          <button class="menu-nav-btn active" onclick="showCategory('dagens-lunch')" data-sv="Dagens Lunch" data-en="Daily Lunch">Dagens Lunch</button>
+          <button class="menu-nav-btn" onclick="showCategory('pizzor')" data-sv="Pizzor" data-en="Pizzas">Pizzor</button>
+          <button class="menu-nav-btn" onclick="showCategory('hamburgare')" data-sv="Hamburgare" data-en="Burgers">Hamburgare</button>
+          <button class="menu-nav-btn" onclick="showCategory('rullar')" data-sv="Rullar & Pita" data-en="Wraps & Pita">Rullar & Pita</button>
+          <button class="menu-nav-btn" onclick="showCategory('tallrikar')" data-sv="Tallrikar" data-en="Plates">Tallrikar</button>
+          <button class="menu-nav-btn" onclick="showCategory('sallader')" data-sv="Sallader" data-en="Salads">Sallader</button>
+          <button class="menu-nav-btn" onclick="showCategory('tillbehor')" data-sv="Tillbehör" data-en="Extras">Tillbehör</button>
+        </div>
+
+        <!-- Dagens Lunch -->
+        <div class="menu-category" id="dagens-lunch">
+          <h3 data-sv="Dagens Lunch" data-en="Daily Lunch">Dagens Lunch</h3>
+          <div class="menu-grid">
+            <div class="menu-item featured">
+              <h4 data-sv="Dagens Lunch" data-en="Daily Lunch">Dagens Lunch</h4>
+              <p data-sv="Inkluderar: Dryck, sallad och kaffe" data-en="Includes: Drink, salad and coffee">Inkluderar: Dryck, sallad och kaffe</p>
+              <p class="time" data-sv="Tillgänglig: 11:00 - 14:00" data-en="Available: 11:00 - 14:00">Tillgänglig: 11:00 - 14:00</p>
+              <span class="price">125 kr</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizzor -->
+        <div class="menu-category" id="pizzor">
+          <h3 data-sv="Pizzor" data-en="Pizzas">Pizzor</h3>
+
+          <h4 class="sub-category" data-sv="Grundpizzor" data-en="Basic Pizzas">Grundpizzor</h4>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <h4 data-sv="Margherita" data-en="Margherita">Margherita</h4>
+              <p data-sv="Tomatsås, ost" data-en="Tomato sauce, cheese">Tomatsås, ost</p>
+              <span class="price">95 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4 data-sv="Vesuvio" data-en="Vesuvio">Vesuvio</h4>
+              <p data-sv="Tomatsås, ost, skinka, paprika" data-en="Tomato sauce, cheese, ham, bell pepper">Tomatsås, ost, skinka, paprika</p>
+              <span class="price">115 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4 data-sv="Hawaii" data-en="Hawaii">Hawaii</h4>
+              <p data-sv="Tomatsås, ost, skinka, ananas" data-en="Tomato sauce, cheese, ham, pineapple">Tomatsås, ost, skinka, ananas</p>
+              <span class="price">115 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4 data-sv="Capricciosa" data-en="Capricciosa">Capricciosa</h4>
+              <p data-sv="Tomatsås, ost, champinjoner, skinka" data-en="Tomato sauce, cheese, mushrooms, ham">Tomatsås, ost, champinjoner, skinka</p>
+              <span class="price">115 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4 data-sv="Funghi" data-en="Funghi">Funghi</h4>
+              <p data-sv="Tomatsås, ost, champinjoner" data-en="Tomato sauce, cheese, mushrooms">Tomatsås, ost, champinjoner</p>
+              <span class="price">110 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4 data-sv="Prosciutto" data-en="Prosciutto">Prosciutto</h4>
+              <p data-sv="Tomatsås, ost, skinka" data-en="Tomato sauce, cheese, ham">Tomatsås, ost, skinka</p>
+              <span class="price">110 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4 data-sv="Vegetale" data-en="Vegetale">Vegetale</h4>
+              <p data-sv="Champinjoner, paprika, oliver, lök, majs, tomat" data-en="Mushrooms, bell pepper, olives, onion, corn, tomato">Champinjoner, paprika, oliver, lök, majs, tomat</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4 data-sv="Fyra Ostar" data-en="Four Cheeses">Fyra Ostar</h4>
+              <p data-sv="Tomatsås, fetaost, mozzarella, gorgonzola, pizzaost, rucola" data-en="Tomato sauce, feta cheese, mozzarella, gorgonzola, pizza cheese, arugula">Tomatsås, fetaost, mozzarella, gorgonzola, pizzaost, rucola</p>
+              <span class="price">120 kr</span>
+            </div>
+          </div>
+
+          <h4 class="sub-category" data-sv="Köttfärspizzor" data-en="Ground Meat Pizzas">Köttfärspizzor</h4>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <h4 data-sv="Bolognese" data-en="Bolognese">Bolognese</h4>
+              <p data-sv="Tomatsås, ost, köttfärs, champinjoner, lök, vitlök" data-en="Tomato sauce, cheese, ground meat, mushrooms, onion, garlic">Tomatsås, ost, köttfärs, champinjoner, lök, vitlök</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Mexicana</h4>
+              <p>Tomatsås, ost, köttfärs, lök, paprika, jalapeño</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Vampira</h4>
+              <p>Tomatsås, ost, köttfärs, lök, valfri sås</p>
+              <span class="price">115 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Capri</h4>
+              <p>Tomatsås, ost, köttfärs, skinka, vitlök</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Milano</h4>
+              <p>Tomatsås, ost, köttfärs, champinjoner, vitlök</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Athen</h4>
+              <p>Tomatsås, ost, köttfärs, färsk tomat, vitlök</p>
+              <span class="price">115 kr</span>
+            </div>
+          </div>
+
+          <h4 class="sub-category">Skinkpizzor</h4>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <h4>Venezia</h4>
+              <p>Tomatsås, ost, tonfisk, skinka</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Cacciatora</h4>
+              <p>Tomatsås, ost, salami, skinka</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Italia</h4>
+              <p>Tomatsås, ost, skinka, bacon, lök</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Mafioza</h4>
+              <p>Tomatsås, ost, skinka, salami, paprika</p>
+              <span class="price">120 kr</span>
+            </div>
+          </div>
+
+          <h4 class="sub-category">Kebabpizzor</h4>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <h4>Kebabpizza Special</h4>
+              <p>Tomatsås, ost, kebabkött, lök, gurka, sallad, färsk tomat, pepperoni</p>
+              <span class="price">125 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Paris</h4>
+              <p>Tomatsås, ost, kebabkött, valfri sås</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Acapulco</h4>
+              <p>Tomatsås, ost, champinjoner, kebabkött, valfri sås</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Ararat</h4>
+              <p>Tomatsås, ost, kebabkött, grönsaker, skinka, valfri sås</p>
+              <span class="price">130 kr</span>
+            </div>
+          </div>
+
+          <h4 class="sub-category">Kycklingpizzor</h4>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <h4>Kyckling</h4>
+              <p>Tomatsås, ost, kyckling, valfri sås</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Kyckling Special</h4>
+              <p>Tomatsås, ost, kyckling, grönsaker, valfri sås</p>
+              <span class="price">125 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Sama</h4>
+              <p>Tomatsås, ost, kyckling, banan, curry</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Borås</h4>
+              <p>Tomatsås, ost, kyckling, champinjoner, paprika, valfri sås</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Afrikana</h4>
+              <p>Tomatsås, ost, ananas, banan, nötter, kyckling, curry</p>
+              <span class="price">120 kr</span>
+            </div>
+          </div>
+
+          <h4 class="sub-category">Oxfilépizzor</h4>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <h4>Favorit</h4>
+              <p>Tomatsås, ost, räkor, skinka, lök, oxfilé, champinjoner, bacon, bearnaisesås</p>
+              <span class="price">125 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>La Mer Special</h4>
+              <p>Tomatsås, ost, oxfilé, champinjoner, lök, paprika, bearnaisesås</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Canibale</h4>
+              <p>Tomatsås, ost, oxfilé, champinjoner, köttfärs, bearnaisesås</p>
+              <span class="price">135 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Roma</h4>
+              <p>Tomatsås, ost, oxfilé, köttfärs, lök, vitlök</p>
+              <span class="price">125 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Ancona (Halvbakad)</h4>
+              <p>Tomatsås, ost, oxfilé, lök, jalapeño, färsk tomat, bearnaisesås</p>
+              <span class="price">125 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Colombo</h4>
+              <p>Tomatsås, ost, oxfilé, lök, champinjoner, bearnaisesås</p>
+              <span class="price">125 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Husets Special</h4>
+              <p>Tomatsås, ost, oxfilé, champinjoner, lök, vitlök, ananas, gorgonzola</p>
+              <span class="price">125 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Amigo</h4>
+              <p>Tomatsås, ost, oxfilé, bacon, paprika, lök, krydda (stark)</p>
+              <span class="price">125 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Indiana</h4>
+              <p>Oxfilé, banan, ananas, jordnötter, curry</p>
+              <span class="price">125 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Reale</h4>
+              <p>Oxfilé, bearnaisesås, ägg</p>
+              <span class="price">125 kr</span>
+            </div>
+          </div>
+
+          <h4 class="sub-category">Tonfiskpizzor</h4>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <h4>Pezcatora</h4>
+              <p>Tomatsås, ost, tonfisk, räkor, musslor</p>
+              <span class="price">125 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Ros</h4>
+              <p>Tomatsås, ost, champinjoner, räkor</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Lamis</h4>
+              <p>Tomatsås, ost, tonfisk, valfri sås</p>
+              <span class="price">120 kr</span>
+            </div>
+          </div>
+
+          <h4 class="sub-category">Inbakade Pizzor</h4>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <h4>Calzone</h4>
+              <p>Tomatsås, ost, skinka</p>
+              <span class="price">115 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Ciao Ciao</h4>
+              <p>Tomatsås, ost, oxfilé, champinjoner, vitlök, lök, bearnaisesås</p>
+              <span class="price">125 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Bella</h4>
+              <p>Tomatsås, ost, skinka, ananas, räkor</p>
+              <span class="price">120 kr</span>
+            </div>
+          </div>
+
+          <h4 class="sub-category">Fiskefrukter</h4>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <h4>Rimini</h4>
+              <p>Tomatsås, ost, skinka, räkor, krabba</p>
+              <span class="price">125 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Gladiatore</h4>
+              <p>Tomatsås, ost, räkor, ananas</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Marinara</h4>
+              <p>Tomatsås, ost, räkor, musslor</p>
+              <span class="price">120 kr</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hamburgare -->
+        <div class="menu-category" id="hamburgare">
+          <h3 data-sv="Hamburgare" data-en="Burgers">Hamburgare</h3>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <h4 data-sv="Hot Burgare" data-en="Hot Burger">Hot Burgare</h4>
+              <p data-sv="Chilimajonnäs, pickles, rödlök, rostad lök, cheddar, BBQ-sås" data-en="Chili mayo, pickles, red onion, fried onion, cheddar, BBQ sauce">Chilimajonnäs, pickles, rödlök, rostad lök, cheddar, BBQ-sås</p>
+              <span class="price">90 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4 data-sv="Jalapeño Cheese" data-en="Jalapeño Cheese">Jalapeño Cheese</h4>
+              <p data-sv="Chilimajonnäs, krispig sallad, färsk jalapeño, krossad chili cheese" data-en="Chili mayo, crispy lettuce, fresh jalapeño, crushed chili cheese">Chilimajonnäs, krispig sallad, färsk jalapeño, krossad chili cheese</p>
+              <span class="price">105 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Kycklingburgare</h4>
+              <p>Tryffelmajo, krispig sallad, rödlök, BBQ-sås</p>
+              <span class="price">100 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Klassisk Burgare</h4>
+              <p>Hamburgersås, krispig sallad, rödlök, cheddar, tomat</p>
+              <span class="price">110 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Fiskburgare</h4>
+              <p>Fiskburgare med tillbehör</p>
+              <span class="price">105 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Fiskburgare Meny</h4>
+              <p>Fiskburgare med pommes och dryck</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Halloumi Burgare</h4>
+              <p>Bearnaisesås, krispig sallad, rödlök, tomat</p>
+              <span class="price">110 kr</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rullar & Pita -->
+        <div class="menu-category" id="rullar">
+          <h3 data-sv="Rullar & Pitabröd" data-en="Wraps & Pita Bread">Rullar & Pitabröd</h3>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <h4>Kycklingkebab Rulle</h4>
+              <p>Valfri sås</p>
+              <span class="price">95 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Kebabrulle</h4>
+              <p>Valfri sås</p>
+              <span class="price">95 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Falafel Rulle</h4>
+              <p>Falafel i tunnbröd</p>
+              <span class="price">85 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Grekiskrulle</h4>
+              <p>Med fårost</p>
+              <span class="price">100 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Kebab i Pitabröd</h4>
+              <p>Kebabkött, sallad, tomat, gurka, sås</p>
+              <span class="price">95 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Kyckling i Pitabröd</h4>
+              <p>Kyckling, sallad, tomat, gurka, sås</p>
+              <span class="price">95 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Mix i Pitabröd</h4>
+              <p>Blandning av kött, sallad, sås</p>
+              <span class="price">95 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Crispy Rulle</h4>
+              <p>Knaprig kyckling i tunnbröd</p>
+              <span class="price">95 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Crispy Rulle med Ost</h4>
+              <p>Knaprig kyckling med ost</p>
+              <span class="price">110 kr</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tallrikar -->
+        <div class="menu-category" id="tallrikar">
+          <h3 data-sv="Tallrikar" data-en="Plates">Tallrikar</h3>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <h4>Kebabtallrik</h4>
+              <p>Med pommes eller ris</p>
+              <span class="price">130 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Hawaiitallrik</h4>
+              <p>Med ananas</p>
+              <span class="price">140 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Grekisk Tallrik</h4>
+              <p>Med fårost</p>
+              <span class="price">140 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Kycklingtallrik</h4>
+              <p>Kycklingkött, ris, sallad, sås</p>
+              <span class="price">130 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Mixtallrik</h4>
+              <p>Blandning av olika kött</p>
+              <span class="price">130 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Falafeltallrik</h4>
+              <p>Falafel, ris, sallad, sås</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Pommestallrik</h4>
+              <p>Endast pommes frites</p>
+              <span class="price">50 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Crispy Kyckling</h4>
+              <p>Serveras med pommes eller ris</p>
+              <span class="price">140 kr</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sallader -->
+        <div class="menu-category" id="sallader">
+          <h3 data-sv="Sallader" data-en="Salads">Sallader</h3>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <h4>Kyckling</h4>
+              <p>Kyckling, gurka, majs, paprika, färsk tomat, champinjoner, isbergssallad</p>
+              <span class="price">115 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Tonfisk</h4>
+              <p>Tonfisk, tomat, lök, paprika, oliver, gurka, isbergssallad, citron</p>
+              <span class="price">115 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Amerika</h4>
+              <p>Skinka, ost, ananas, gurka, paprika, färsk tomat, isbergssallad</p>
+              <span class="price">115 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Vegetarisk</h4>
+              <p>Gurka, tomat, paprika, falafel, majs, fetaost, ananas, isbergssallad, sparris</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Grekisk</h4>
+              <p>Fetaost, oliver, tomat, gurka, lök, isbergssallad, pepperoni</p>
+              <span class="price">120 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Kebab</h4>
+              <p>Kebabkött, tomat, gurka, lök, isbergssallad, pepperoni</p>
+              <span class="price">115 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Räksallad</h4>
+              <p>Räkor, tomat, gurka, ägg, isbergssallad, paprika, majs</p>
+              <span class="price">115 kr</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tillbehör -->
+        <div class="menu-category" id="tillbehor">
+          <h3 data-sv="Tillbehör" data-en="Extras">Tillbehör</h3>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <h4>Kycklingnuggets</h4>
+              <p>Barnmeny</p>
+              <span class="price">85 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Extra Pommes</h4>
+              <p>Portion pommes frites</p>
+              <span class="price">15 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Lökriningar (9 st)</h4>
+              <p>Friterade lökriningar</p>
+              <span class="price">35 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Mozzarella Sticks (3 st)</h4>
+              <p>Friterade mozzarella pinnar</p>
+              <span class="price">44 kr</span>
+            </div>
+            <div class="menu-item">
+              <h4>Chili Cheese (5 st)</h4>
+              <p>Friterade chili cheese</p>
+              <span class="price">45 kr</span>
+            </div>
+          </div>
+
+          <h4 class="sub-category" data-sv="Extra på Pizza" data-en="Pizza Extras">Extra på Pizza</h4>
+          <div class="menu-grid">
+            <div class="menu-item small">
+              <h4>Mozzarella/Gorgonzola/Kött/Skaldjur</h4>
+              <span class="price">25 kr</span>
+            </div>
+            <div class="menu-item small">
+              <h4>Sallad/Ananas/Kronärtskocka/Fetaost</h4>
+              <span class="price">10 kr</span>
+            </div>
+            <div class="menu-item small">
+              <h4>Jalapeño/Majs/Oliver/Sås</h4>
+              <span class="price">10 kr</span>
+            </div>
+            <div class="menu-item small">
+              <h4>Ost</h4>
+              <span class="price">10 kr</span>
+            </div>
+            <div class="menu-item small">
+              <h4>Familjepizza (dubbel pris)</h4>
+              <span class="price">+15 kr</span>
+            </div>
+            <div class="menu-item small">
+              <h4>Barnpizza</h4>
+              <span class="price">-10 kr</span>
+            </div>
+            <div class="menu-item small">
+              <h4>Dubbel deg</h4>
+              <span class="price">+15 kr</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2 data-sv="Om Eketrä" data-en="About Ekträ">Om Eketrä</h2>
+        <div class="about-content">
+          <p data-sv="Benvenuti alla famiglia Ekträ! Sedan 1995 har vi fört italienska traditioner till Stockholm med äkta passion för pizza-konsten. Vår familj från Napoli delar med sig av hemligheter som förts vidare i generationer." data-en="Welcome to the Ekträ family! Since 1995, we have brought Italian traditions to Stockholm with genuine passion for the art of pizza. Our family from Naples shares secrets passed down through generations.">🍕 Benvenuti alla famiglia Ekträ! Sedan 1995 har vi fört italienska traditioner till Stockholm med äkta passion för pizza-konsten. Vår familj från Napoli delar med sig av hemligheter som förts vidare i generationer.</p>
+
+          <p data-sv="Vår pizzadeg jäser i 48 timmar för perfekt konsistens. San Marzano-tomater, äkta mozzarella di bufala och extra virgin olivolja från våra egna leverantörer i Italien. Varje pizza bakas i vår stenugn vid 450°C för autentisk smak." data-en="Our pizza dough rises for 48 hours for perfect consistency. San Marzano tomatoes, authentic mozzarella di bufala and extra virgin olive oil from our own suppliers in Italy. Each pizza bakas i vår stenugn vid 450°C för autentisk smak.">🔥 Vår pizzadeg jäser i 48 timmar för perfekt konsistens. San Marzano-tomater, äkta mozzarella di bufala och extra virgin olivolja från våra egna leverantörer i Italien. Varje pizza bakas i vår stenugn vid 450°C för autentisk smak.</p>
+
+          <p data-sv="Ekträ betyder 'extra' - och det är precis vad vi ger dig. Extra kärlek, extra smak, extra glädje. Kom och upplev la dolce vita mitt i Stockholm!" data-en="Ekträ means 'extra' - and that's exactly what we give you. Extra love, extra flavor, extra joy. Come and experience la dolce vita in the heart of Stockholm!">❤️ Eketrä betyder 'extra' - och det är precis vad vi ger dig. Extra kärlek, extra smak, extra glädje. Kom och upplev la dolce vita mitt i Stockholm!</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="location" class="location-section">
+      <div class="container">
+        <h2 data-sv="Plats & Öppettider" data-en="Location & Hours">Plats & Öppettider</h2>
+        <div class="location-content">
+          <div class="location-info">
+            <div class="info-block">
+              <h3 data-sv="Adress" data-en="Address">Adress</h3>
+              <p>Pizzagatan 123<br>123 45 Stockholm</p>
+            </div>
+            <div class="info-block">
+              <h3 data-sv="Telefon" data-en="Phone">Telefon</h3>
+              <p><a href="tel:+46812345067" class="phone-link">08-123 45 67</a></p>
+            </div>
+            <div class="info-block">
+              <h3 data-sv="Öppettider" data-en="Opening Hours">Öppettider</h3>
+              <div class="hours">
+                <p><strong data-sv="Måndag-Fredag:" data-en="Monday-Friday:">Måndag-Fredag:</strong> 11:00-22:00</p>
+                <p><strong data-sv="Lördag-Söndag:" data-en="Saturday-Sunday:">Lördag-Söndag:</strong> 12:00-23:00</p>
+              </div>
+            </div>
+          </div>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2035.0076!2d18.0686!3d59.3293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTnCsDE5JzQ1LjUiTiAxOMKwMDQnMDcuMCJF!5e0!3m2!1sen!2sse!4v1234567890"
+              width="100%" 
+              height="300" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy"
+              alt="Karta till Eketrä">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2 data-sv="Kontakta oss" data-en="Contact Us">Kontakta oss</h2>
+        <div class="contact-content">
+          <p data-sv="Har du frågor eller vill beställa? Ring oss direkt!" data-en="Have questions or want to order? Call us directly!">Har du frågor eller vill beställa? Ring oss direkt!</p>
+          <a href="tel:+46812345067" class="call-button">
+            <span class="phone-icon">📞</span>
+            08-123 45 67
+          </a>
+          <p class="contact-note" data-sv="Vi tar gärna emot din beställning eller svarar på dina frågor." data-en="We're happy to take your order or answer your questions.">Vi tar gärna emot din beställning eller svarar på dina frågor.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="attached_assets/logo ekträ_1751640978741.png" alt="Ekträ Logo" class="footer-logo-image">
+          <span>Eketrä</span>
+        </div>
+        <nav class="footer-nav">
+          <a href="#home" data-sv="Hem" data-en="Home">Hem</a>
+          <a href="#menu" data-sv="Meny" data-en="Menu">Meny</a>
+          <a href="#about" data-sv="Om oss" data-en="About">Om oss</a>
+          <a href="#location" data-sv="Plats" data-en="Location">Plats</a>
+          <a href="#contact" data-sv="Kontakt" data-en="Contact">Kontakt</a>
+        </nav>
+        <div class="social-icons">
+          <span class="social-icon">📘</span>
+          <span class="social-icon">📷</span>
+          <span class="social-icon">🐦</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Eketrä. Alla rättigheter förbehållna.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button id="backToTop" class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
+    ↑
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
